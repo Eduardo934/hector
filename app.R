@@ -7,7 +7,7 @@ ui <- fluidPage(
 server <- function(input, output){
   volumes = getVolumes() # this makes the directory at the base of your computer.
   observe({
-    shinyDirChoose(input, 'folder', roots=c("/home"), filetypes=c('', 'txt'))
+    shinyDirChoose(input, 'folder', roots=volumes, filetypes=c('', 'txt'))
   })
 }
 shinyApp(ui=ui, server=server)
